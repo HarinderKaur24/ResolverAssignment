@@ -15,7 +15,6 @@ public class TestBase {
 	public static WebDriver driver;
 	public Browsers DEFAULT_BROWSER = Browsers.GOOGLE_CHROME;
 
-
 	public void launchBrowser() {
 		switch (DEFAULT_BROWSER) {
 		case GOOGLE_CHROME:

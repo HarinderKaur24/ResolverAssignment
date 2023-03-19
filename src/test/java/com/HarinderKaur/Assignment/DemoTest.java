@@ -22,7 +22,6 @@ public class DemoTest {
 
 	@BeforeMethod
 	public void setUp() {
-
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\kaurh\\OneDrive\\Documents\\Drivers\\chromedriver.exe");
 
