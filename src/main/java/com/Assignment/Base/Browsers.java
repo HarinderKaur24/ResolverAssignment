@@ -1,4 +1,4 @@
-package com.HarinderKaur.Assignment;
+package com.Assignment.Base;
 
 public enum Browsers {
 	GOOGLE_CHROME("chrome"),

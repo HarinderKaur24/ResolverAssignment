@@ -1,5 +1,4 @@
-package com.HarinderKaur.Assignment;
-
+package com.Assignment.Base;
 
 import java.util.concurrent.TimeUnit;
 
@@ -48,7 +47,7 @@ public class TestBase {
 		driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
 
 		// Launch a page
-		driver.get(" ");
+		driver.get("C:/Users/kaurh/Downloads/QE-index.html");
 
 	}
 

@@ -1,20 +1,21 @@
-package com.HarinderKaur.Assignment;
+package com.Assignment.Utils;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Test6Page extends TestBase {
+import com.Assignment.Base.TestBase;
 
-	public WebElement getElementFromTheGrid(String firstName, NameRecord column) {
+public class Utils extends TestBase {
+	
+	//method to find value of the cell
+	public static WebElement getElementFromTheGrid(String firstName, NameRecord column, By by) {
 
 		int columnIndex = getIndexForColumn(column);
-		List<WebElement> rowsInTable = driver
-				.findElements(By.cssSelector("table.table.table-bordered.table-dark tbody tr"));
+		List<WebElement> rowsInTable = driver.findElements(by);
 		for (int i = 0; i < rowsInTable.size(); i++) {
 			List<WebElement> cells = rowsInTable.get(i).findElements(By.cssSelector("td"));
-			String firstNameText = cells.get(1).getText();
+			String firstNameText = cells.get(0).getText();
 			if (firstNameText.equals(firstName)) {
 				return cells.get(columnIndex);
 			}
@@ -23,7 +24,7 @@ public class Test6Page extends TestBase {
 		return null;
 	}
 
-	public int getIndexForColumn(NameRecord column) {
+	private static int getIndexForColumn(NameRecord column) {
 		List<WebElement> headers = driver
 				.findElements(By.cssSelector("table.table.table-bordered.table-dark thead tr th"));
 
@@ -36,7 +37,7 @@ public class Test6Page extends TestBase {
 		System.out.println("Column does not exist.....");
 		return -1;
 	}
-
+	
 	public enum NameRecord {
 
 		FIRSTNAME("First Name"),
@@ -53,4 +54,5 @@ public class Test6Page extends TestBase {
 			return name;
 		}
 	}
+	
 }
